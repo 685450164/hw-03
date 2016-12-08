@@ -25,16 +25,16 @@
                         .append("rect")
                         .attr({
                         x: 190,
-                        y: 10+12*count,
+                        y: 10+18*count,
                         width: dataSet[i].amount/100000000,
-                        height: 10,
+                        height: 15,
                         fill: "red"
                       });
                       d3.select("svg")
                         .append("text")
                         .attr({
                         x: 0,
-                        y: 16+12*count,
+                        y: 20+18*count,
                         "font-size": 5
                       }).text(dataSet[i].industry);
                     
@@ -42,12 +42,10 @@
                         .append("text")
                         .attr({
                         x: 200+dataSet[i].amount/100000000,
-                        y: 20+12*count,
-                        "font-size": 5
+                        y: 20+18.5*count,
+                        "font-size": 6
                       }).text(dataSet[i].amount/1000000000);
-                      count=count+1;
-                    
-//                      count++;
+                      count=count+1;                
                  }
                 
             }
