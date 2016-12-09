@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <title>d3-start</title>
     <script src="https://d3js.org/d3.v3.js"></script>
-    <style>
-        div{
-            font-size: 7px;
-        }
-    </style>
 </head>
 <body>
   <svg width="600" height="300">
@@ -35,7 +30,7 @@
                         .attr({
                         x: 0,
                         y: 20+18*count,
-                        "font-size": 5
+                        "font-size": 12
                       }).text(dataSet[i].industry);
                     
                       d3.select("svg")
@@ -43,8 +38,8 @@
                         .attr({
                         x: 200+dataSet[i].amount/100000000,
                         y: 20+18.5*count,
-                        "font-size": 6
-                      }).text(dataSet[i].amount/1000000000);
+                        "font-size": 12
+                      }).text(Math.round(dataSet[i].amount/1000000000,1));
                       count=count+1;                
                  }
                 
