@@ -6,10 +6,8 @@
     <script src="https://d3js.org/d3.v3.js"></script>
 </head>
 <body>
-  <svg width="600" height="300">
-      
-  </svg>
-   
+  <svg width="600" height="300"></svg>
+  <hr>
    <script>
        d3.json("invoice-taipei.json", function(dataSet){
            var svg = d3.select("svg");
@@ -42,9 +40,39 @@
                       }).text(Math.round(dataSet[i].amount/1000000000,1));
                       count=count+1;                
                  }
-                
             }
        });
-   </script>
+    </script>
+    <script>    
+        var arr = [85, 60, 99, 49, 77, 82];    
+        bind(arr);
+        render();
+
+        function bind(data){
+            var selection=d3.select("body")
+                            .selectAll("div")
+                            .data(data);
+            selection.enter().append("div");
+            selection.exit().remove();
+        }
+
+        function render(){
+            d3.selectAll("div")
+              .style({
+                "font-size":10,
+                "color":function(d){
+                    if(d<70){
+                        return "red";
+                    }
+                    else{
+                        return "black";
+                    }
+                }
+               })
+              .text(function(d,i){                      
+                return i+1+":"+d;
+               });
+        }
+    </script>
 </body>
 </html>
