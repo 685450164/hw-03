@@ -37,7 +37,7 @@
                         x: 200+dataSet[i].amount/100000000,
                         y: 20+18.5*count,
                         "font-size": 12
-                      }).text(Math.round(dataSet[i].amount/1000000000,1));
+                      }).text(Math.round(dataSet[i].amount/100000000*10)/10+" 億");
                       count=count+1;                
                  }
             }
