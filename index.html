@@ -37,11 +37,23 @@
                         x: 200+dataSet[i].amount/100000000,
                         y: 20+18.5*count,
                         "font-size": 12
-                      }).text(Math.round(dataSet[i].amount/100000000*10)/10+" 億");
+                      }).text(thousandComma((dataSet[i].amount/100000000).toFixed(1))+" 億");
                       count=count+1;                
                  }
             }
        });
+	   
+	   var thousandComma = function(number){
+       var num = number.toString();
+       var pattern = /(-?\d+)(\d{3})/;  
+       while(pattern.test(num))
+ {
+  num = num.replace(pattern, "$1,$2");
+  
+ }
+ return num;
+ 
+}
     </script>
     <script>    
         var arr = [85, 60, 99, 49, 77, 82];    
